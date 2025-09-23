@@ -1,13 +1,40 @@
 {
   "pages":[
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forget-password/forget-password",
+    "pages/protocol/protocol",
     "pages/index/index",
+    "pages/study/study",
+    "pages/profile/profile",
+    "pages/change-password/change-password",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "宝贝闪卡乐园",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#07C160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "内容管理"
+      },
+      {
+        "pagePath": "pages/study/study",
+        "text": "学习卡"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

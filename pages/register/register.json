@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "l-button": "/miniprogram_npm/lin-ui/button/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index"
+  },
+  "navigationBarTitleText": "注册",
+  "navigationBarBackgroundColor": "#764ba2",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#764ba2"
+}

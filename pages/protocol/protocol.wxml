@@ -1,0 +1,8 @@
+<!--pages/protocol/protocol.wxml-->
+<view class="protocol-container">
+  <view class="content-wrapper">
+    <view class="protocol-content">
+      <text class="protocol-text" decode="{{true}}">{{content}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+/* pages/protocol/protocol.wxss */
+.protocol-container {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.content-wrapper {
+  padding: 40rpx;
+}
+
+.protocol-content {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.protocol-text {
+  line-height: 1.8;
+  font-size: 28rpx;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

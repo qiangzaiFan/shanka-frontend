@@ -1,0 +1,53 @@
+<!--pages/profile/profile.wxml-->
+<view class="profile-container">
+  <!-- 用户信息区域 -->
+  <view class="user-section">
+    <view class="user-info">
+      <view class="avatar">
+        <image src="{{userInfo.avatar || '/images/default-avatar.png'}}" class="avatar-img" mode="aspectFill"></image>
+      </view>
+      <view class="user-details">
+        <view class="username">{{userInfo.nickname || '小明爸爸'}}</view>
+        <view class="user-meta">
+          <text class="user-id">编号：{{userInfo.id || '10086'}}</text>
+          <text class="user-expire">有效期至：{{userInfo.expireDate || '2026-08-07'}}</text>
+        </view>
+      </view>
+      <view class="arrow-icon">
+        <l-icon name="right" size="32" color="#ccc"></l-icon>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="goToStudyReport">
+      <view class="menu-content">
+        <view class="menu-icon">
+          <l-icon name="chart" size="40" color="#666"></l-icon>
+        </view>
+        <text class="menu-text">学习情况报告</text>
+      </view>
+      <view class="arrow-icon">
+        <l-icon name="right" size="32" color="#ccc"></l-icon>
+      </view>
+    </view>
+
+    <view class="menu-item" bindtap="goToChangePassword">
+      <view class="menu-content">
+        <view class="menu-icon">
+          <l-icon name="lock" size="40" color="#666"></l-icon>
+        </view>
+        <text class="menu-text">修改密码</text>
+      </view>
+      <view class="arrow-icon">
+        <l-icon name="right" size="32" color="#ccc"></l-icon>
+      </view>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+</view>

@@ -1,0 +1,129 @@
+<!--pages/register/register.wxml-->
+<view class="register-container">
+  <!-- 顶部装饰 -->
+  <view class="header-decoration">
+    <view class="decoration-circle circle-1"></view>
+    <view class="decoration-circle circle-2"></view>
+  </view>
+
+  <!-- 头部 -->
+  <view class="header-section">
+    <view class="title">创建账号</view>
+    <view class="subtitle">加入宝贝的闪卡世界</view>
+  </view>
+
+  <!-- 注册表单 -->
+  <view class="form-section">
+    <!-- 手机号 -->
+    <view class="input-group">
+      <view class="input-wrapper">
+        <view class="input-icon">
+          <l-icon name="phone" size="40" color="#999"></l-icon>
+        </view>
+        <input 
+          class="input-field" 
+          type="number" 
+          placeholder="请输入手机号" 
+          value="{{phone}}"
+          bindinput="onPhoneInput"
+          maxlength="11"
+        />
+      </view>
+    </view>
+
+    <!-- 验证码 -->
+    <view class="input-group">
+      <view class="input-wrapper">
+        <view class="input-icon">
+          <l-icon name="message" size="40" color="#999"></l-icon>
+        </view>
+        <input 
+          class="input-field" 
+          type="number" 
+          placeholder="请输入验证码" 
+          value="{{smsCode}}"
+          bindinput="onSmsCodeInput"
+          maxlength="6"
+        />
+        <view 
+          class="sms-btn {{countdown > 0 ? 'disabled' : ''}}" 
+          bindtap="sendSmsCode"
+        >
+          {{countdown > 0 ? countdown + 's' : '发送验证码'}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 密码 -->
+    <view class="input-group">
+      <view class="input-wrapper">
+        <view class="input-icon">
+          <l-icon name="lock" size="40" color="#999"></l-icon>
+        </view>
+        <input 
+          class="input-field" 
+          type="{{showPassword ? 'text' : 'password'}}" 
+          placeholder="请设置密码（至少6位）" 
+          value="{{password}}"
+          bindinput="onPasswordInput"
+        />
+        <view class="input-action" bindtap="togglePasswordShow">
+          <l-icon name="{{showPassword ? 'eye' : 'eye-close'}}" size="40" color="#999"></l-icon>
+        </view>
+      </view>
+    </view>
+
+    <!-- 确认密码 -->
+    <view class="input-group">
+      <view class="input-wrapper">
+        <view class="input-icon">
+          <l-icon name="lock" size="40" color="#999"></l-icon>
+        </view>
+        <input 
+          class="input-field" 
+          type="{{showConfirmPassword ? 'text' : 'password'}}" 
+          placeholder="请再次输入密码" 
+          value="{{confirmPassword}}"
+          bindinput="onConfirmPasswordInput"
+        />
+        <view class="input-action" bindtap="toggleConfirmPasswordShow">
+          <l-icon name="{{showConfirmPassword ? 'eye' : 'eye-close'}}" size="40" color="#999"></l-icon>
+        </view>
+      </view>
+    </view>
+
+    <!-- 协议同意 -->
+    <view class="agreement-section">
+      <checkbox-group bindchange="onAgreeChange">
+        <label class="agreement-label">
+          <checkbox value="agree" class="agreement-checkbox" />
+          <text class="agreement-text">
+            我已阅读并同意
+            <text class="link-text" bindtap="viewProtocol" data-type="user">《用户协议》</text>
+            和
+            <text class="link-text" bindtap="viewProtocol" data-type="privacy">《隐私政策》</text>
+          </text>
+        </label>
+      </checkbox-group>
+    </view>
+
+    <!-- 注册按钮 -->
+    <view class="register-btn-wrapper">
+      <l-button 
+        class="register-btn"
+        type="success"
+        size="large"
+        loading="{{loading}}"
+        bind:lintap="handleRegister"
+      >
+        {{loading ? '注册中...' : '立即注册'}}
+      </l-button>
+    </view>
+
+    <!-- 登录入口 -->
+    <view class="login-section">
+      <text class="login-text">已有账号？</text>
+      <text class="login-link" bindtap="goLogin">立即登录</text>
+    </view>
+  </view>
+</view>

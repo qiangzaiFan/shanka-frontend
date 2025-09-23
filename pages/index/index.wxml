@@ -1,23 +1,59 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo && canIUse}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <!-- 头部欢迎区域 -->
+  <view class="header-section">
+    <view class="welcome-text">欢迎来到</view>
+    <view class="app-title">宝贝闪卡乐园</view>
   </view>
-  <view class="usermotto">
-    <text class="motto">{{motto}}</text>
+
+  <!-- 功能卡片区域 -->
+  <view class="content-section">
+    <view class="card-grid">
+      <view class="function-card" bindtap="goToContentManage">
+        <view class="card-icon">
+          <image src="/images/icon-content.png" class="icon-img" mode="aspectFit"></image>
+        </view>
+        <view class="card-title">内容管理</view>
+        <view class="card-desc">管理学习内容</view>
+      </view>
+
+      <view class="function-card" bindtap="goToStudyCard">
+        <view class="card-icon">
+          <image src="/images/icon-study.png" class="icon-img" mode="aspectFit"></image>
+        </view>
+        <view class="card-title">学习卡</view>
+        <view class="card-desc">开始学习之旅</view>
+      </view>
+
+      <view class="function-card" bindtap="goToProgress">
+        <view class="card-icon">
+          <image src="/images/icon-progress.png" class="icon-img" mode="aspectFit"></image>
+        </view>
+        <view class="card-title">学习进度</view>
+        <view class="card-desc">查看学习情况</view>
+      </view>
+
+      <view class="function-card" bindtap="goToSettings">
+        <view class="card-icon">
+          <image src="/images/icon-settings.png" class="icon-img" mode="aspectFit"></image>
+        </view>
+        <view class="card-title">设置</view>
+        <view class="card-desc">个性化设置</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最近学习 -->
+  <view class="recent-section">
+    <view class="section-title">最近学习</view>
+    <view class="recent-list">
+      <view class="recent-item" wx:for="{{recentStudy}}" wx:key="id">
+        <view class="recent-info">
+          <view class="recent-title">{{item.title}}</view>
+          <view class="recent-time">{{item.time}}</view>
+        </view>
+        <view class="recent-progress">{{item.progress}}%</view>
+      </view>
+    </view>
   </view>
 </view>

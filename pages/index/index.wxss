@@ -1,19 +1,129 @@
 /**index.wxss**/
-.userinfo {
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 40rpx;
+}
+
+/* 头部区域 */
+.header-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80rpx 40rpx 60rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.welcome-text {
+  font-size: 28rpx;
+  opacity: 0.9;
+  margin-bottom: 16rpx;
+}
+
+.app-title {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+/* 内容区域 */
+.content-section {
+  padding: 40rpx;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24rpx;
+}
+
+.function-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 40rpx 24rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.function-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto 24rpx;
+  background: #f0f0f0;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-img {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.card-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 最近学习区域 */
+.recent-section {
+  margin: 40rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+
+.recent-list {
   display: flex;
   flex-direction: column;
+  gap: 16rpx;
+}
+
+.recent-item {
+  display: flex;
   align-items: center;
-  color: #aaa;
+  justify-content: space-between;
+  padding: 24rpx;
+  background: #f8f9fa;
+  border-radius: 12rpx;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.recent-info {
+  flex: 1;
 }
 
-.usermotto {
-  margin-top: 200px;
+.recent-title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.recent-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.recent-progress {
+  font-size: 28rpx;
+  color: #07C160;
+  font-weight: bold;
 }
