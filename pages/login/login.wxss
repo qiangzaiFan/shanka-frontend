@@ -67,8 +67,6 @@
   border-radius: 8rpx;
   font-size: 32rpx;
   font-weight: normal;
-  line-height: 96rpx;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -35,6 +35,11 @@
   font-weight: bold;
   box-shadow: 0 8rpx 24rpx rgba(118, 75, 162, 0.3);
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
 }
 
 .register-btn:active {

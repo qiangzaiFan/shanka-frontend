@@ -176,6 +176,10 @@
   padding: 12rpx 24rpx;
   border-radius: 20rpx;
   font-size: 24rpx;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 学习统计区域 */

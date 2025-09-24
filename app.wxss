@@ -8,3 +8,39 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
+/* 底部导航栏文字大小调整 */
+.wx-tabbar-item {
+  font-size: 32rpx !important;
+}
+
+.wx-tabbar-label {
+  font-size: 32rpx !important;
+  font-weight: 500 !important;
+}
+
+/* 针对iOS设备的额外优化 */
+.wx-tabbar-item .wx-tabbar-label {
+  font-size: 32rpx !important;
+  line-height: 1.2 !important;
+}
+
+/* 底部导航栏位置调整 - 确保贴合屏幕底部 */
+.wx-tabbar {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
+
+/* 兼容不同设备的底部安全区域 */
+.wx-tabbar-border {
+  display: none !important;
+}
+
+/* 确保内容区域不被底部导航栏遮挡 */
+page {
+  padding-bottom: env(safe-area-inset-bottom) !important;
+}
