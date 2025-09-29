@@ -1,58 +1,65 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- 头部欢迎区域 -->
-  <view class="header-section">
-    <view class="welcome-text">欢迎来到</view>
-    <view class="app-title">宝贝闪卡乐园</view>
+  <!-- 页面标题 -->
+  <view class="header">
+    <view class="header-title">闪卡管理</view>
   </view>
 
-  <!-- 功能卡片区域 -->
-  <view class="content-section">
-    <view class="card-grid">
-      <view class="function-card" bindtap="goToContentManage">
-        <view class="card-icon">
-          <image src="/images/icon-content.png" class="icon-img" mode="aspectFit"></image>
-        </view>
-        <view class="card-title">内容管理</view>
-        <view class="card-desc">管理学习内容</view>
-      </view>
-
-      <view class="function-card" bindtap="goToStudyCard">
-        <view class="card-icon">
-          <image src="/images/icon-study.png" class="icon-img" mode="aspectFit"></image>
-        </view>
-        <view class="card-title">学习卡</view>
-        <view class="card-desc">开始学习之旅</view>
-      </view>
-
-      <view class="function-card" bindtap="goToProgress">
-        <view class="card-icon">
-          <image src="/images/icon-progress.png" class="icon-img" mode="aspectFit"></image>
-        </view>
-        <view class="card-title">学习进度</view>
-        <view class="card-desc">查看学习情况</view>
-      </view>
-
-      <view class="function-card" bindtap="goToSettings">
-        <view class="card-icon">
-          <image src="/images/icon-settings.png" class="icon-img" mode="aspectFit"></image>
-        </view>
-        <view class="card-title">设置</view>
-        <view class="card-desc">个性化设置</view>
-      </view>
+  <!-- 词汇统计 -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <view class="stat-value" style="color: #333333;">{{totalWords}}</view>
+      <view class="stat-label">总词量</view>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <view class="stat-value" style="color: #27AE60;">{{newWords}}</view>
+      <view class="stat-label">新词量</view>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <view class="stat-value" style="color: #E67E22;">{{oldWords}}</view>
+      <view class="stat-label">旧词量</view>
     </view>
   </view>
 
-  <!-- 最近学习 -->
-  <view class="recent-section">
-    <view class="section-title">最近学习</view>
-    <view class="recent-list">
-      <view class="recent-item" wx:for="{{recentStudy}}" wx:key="id">
-        <view class="recent-info">
-          <view class="recent-title">{{item.title}}</view>
-          <view class="recent-time">{{item.time}}</view>
+  <!-- 操作按钮 -->
+  <view class="actions-section">
+    <view class="action-item" bindtap="addCard">
+      <l-icon name="add" size="28" color="#3498DB"></l-icon>
+      <text class="action-text">新增闪卡</text>
+    </view>
+    <view class="action-item" bindtap="batchAdd">
+      <l-icon name="upload" size="28" color="#27AE60"></l-icon>
+      <text class="action-text">批量新增</text>
+    </view>
+    <view class="action-item" bindtap="goToSettings">
+      <l-icon name="setting" size="28" color="#34495E"></l-icon>
+      <text class="action-text">闪卡设置</text>
+    </view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-section">
+    <view class="search-bar">
+      <l-icon name="search" color="#BBBBBB" size="36"></l-icon>
+      <input class="search-input" placeholder="按单词搜索..." value="{{keyword}}" bindinput="onSearchInput" />
+    </view>
+  </view>
+
+  <!-- 闪卡列表 -->
+  <view class="list-section">
+    <view class="list-header">闪卡列表</view>
+    <view class="card-list">
+      <view class="card-item" wx:for="{{filteredCards}}" wx:key="id">
+        <image class="card-image" src="{{item.image || '/images/default-card.png'}}" mode="aspectFill"></image>
+        <view class="card-info">
+          <view class="card-word">{{item.word}}</view>
+          <view class="card-date">添加: {{item.date}}</view>
         </view>
-        <view class="recent-progress">{{item.progress}}%</view>
+        <view class="card-actions">
+          <button class="edit-btn" bindtap="editCard" data-id="{{item.id}}">编辑</button>
+        </view>
       </view>
     </view>
   </view>

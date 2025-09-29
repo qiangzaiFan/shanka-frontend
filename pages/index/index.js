@@ -1,33 +1,23 @@
 // index.js
-// 获取应用实例
-const app = getApp()
-
 Page({
   data: {
-    recentStudy: [
-      {
-        id: 1,
-        title: '数学基础练习',
-        time: '今天 14:30',
-        progress: 85
-      },
-      {
-        id: 2,
-        title: '英语单词卡片',
-        time: '昨天 16:20',
-        progress: 92
-      },
-      {
-        id: 3,
-        title: '语文古诗词',
-        time: '前天 10:15',
-        progress: 67
-      }
-    ]
+    totalWords: 158,
+    newWords: 20,
+    oldWords: 138,
+    keyword: '',
+    allCards: [
+      { id: 1, word: 'apple', date: '2025-08-07', image: '' },
+      { id: 2, word: 'bicycle', date: '2025-08-07', image: '' },
+      { id: 3, word: 'elephant', date: '2025-08-07', image: '' },
+    ],
+    filteredCards: []
   },
 
   onLoad() {
     this.checkLoginStatus();
+    this.setData({
+      filteredCards: this.data.allCards
+    });
   },
 
   // 检查登录状态
@@ -40,34 +30,36 @@ Page({
     }
   },
 
-  // 跳转到内容管理
-  goToContentManage() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
+  // 搜索输入
+  onSearchInput(e) {
+    const keyword = e.detail.value.toLowerCase();
+    const filteredCards = this.data.allCards.filter(card => 
+      card.word.toLowerCase().includes(keyword)
+    );
+    this.setData({
+      keyword,
+      filteredCards
     });
   },
 
-  // 跳转到学习卡
-  goToStudyCard() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
-    });
+  // 新增闪卡
+  addCard() {
+    wx.showToast({ title: '功能开发中', icon: 'none' });
   },
 
-  // 跳转到学习进度
-  goToProgress() {
-    wx.showToast({
-      title: '功能开发中',
-      icon: 'none'
-    });
+  // 批量新增
+  batchAdd() {
+    wx.showToast({ title: '功能开发中', icon: 'none' });
   },
 
-  // 跳转到设置
+  // 闪卡设置
   goToSettings() {
-    wx.navigateTo({
-      url: '/pages/profile/profile'
-    });
+    wx.showToast({ title: '功能开发中', icon: 'none' });
+  },
+
+  // 编辑闪卡
+  editCard(e) {
+    const cardId = e.currentTarget.dataset.id;
+    wx.showToast({ title: `编辑闪卡 ${cardId}`, icon: 'none' });
   }
 })
