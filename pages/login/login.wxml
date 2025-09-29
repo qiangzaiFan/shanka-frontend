@@ -38,7 +38,7 @@
         loading="{{loading}}"
         bindtap="handleLogin"
       >
-        登录
+        登 录
       </button>
     </view>
 

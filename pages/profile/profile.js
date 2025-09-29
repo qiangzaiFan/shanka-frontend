@@ -26,6 +26,13 @@ Page({
 
   // 跳转到学习报告页面
   goToStudyReport: function() {
+    wx.navigateTo({
+      url: '/pages/study/study'
+    });
+  },
+
+  // 跳转到个人信息页面
+  goToProfileInfo: function() {
     wx.showToast({
       title: '功能开发中',
       icon: 'none'

@@ -10,6 +10,11 @@ Page({
     loading: false
   },
 
+  // 返回上一页
+  goBack: function() {
+    wx.navigateBack();
+  },
+
   // 当前密码输入
   onCurrentPasswordInput: function(e) {
     this.setData({
@@ -51,26 +56,9 @@ Page({
       return;
     }
 
-    if (!newPassword) {
-      wx.showToast({
-        title: '请输入新密码',
-        icon: 'none'
-      });
-      return;
-    }
-
-    if (!confirmPassword) {
-      wx.showToast({
-        title: '请确认新密码',
-        icon: 'none'
-      });
-      return;
-    }
-
-    // 验证新密码格式
     if (!this.validatePassword(newPassword)) {
       wx.showToast({
-        title: '密码格式不正确',
+        title: '新密码需为8-16位，包含字母和数字',
         icon: 'none'
       });
       return;
@@ -109,6 +97,6 @@ Page({
       setTimeout(() => {
         wx.navigateBack();
       }, 1500);
-    }, 2000);
+    }, 1000);
   }
 });
