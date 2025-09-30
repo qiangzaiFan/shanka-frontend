@@ -1,0 +1,47 @@
+<!--pages/add-card/add-card.wxml-->
+<view class="add-card-container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <view class="back-icon" bindtap="goBack">
+      <l-icon name="left" size="32" color="#000000"></l-icon>
+    </view>
+    <view class="header-title">新增闪卡</view>
+  </view>
+
+  <!-- 单词输入 -->
+  <view class="section-header">单词</view>
+  <view class="word-input-section">
+    <input class="word-input" placeholder="请输入英文单词" value="{{word}}" bindinput="onWordInput" />
+    <view class="word-tip">输入后自动匹配词典</view>
+  </view>
+
+  <!-- 图片上传 -->
+  <view class="section-header">图片 (最多5张)</view>
+  <view class="image-upload-section">
+    <view class="image-uploader" bindtap="chooseImage">
+      <l-icon name="add" size="40" color="#DCDFE6"></l-icon>
+    </view>
+    <!-- 这里可以添加已选图片的预览 -->
+  </view>
+
+  <!-- 释义与例句 -->
+  <view class="section-header">释义与例句</view>
+  <view class="definition-section">
+    <view class="definition-group">
+      <view class="definition-label">释义</view>
+      <textarea class="definition-textarea" placeholder="自动匹配官方释义..." value="{{definition}}" bindinput="onDefinitionInput"></textarea>
+    </view>
+    <view class="divider"></view>
+    <view class="definition-group">
+      <view class="definition-label">例句</view>
+      <textarea class="definition-textarea" placeholder="自动匹配官方例句..." value="{{example}}" bindinput="onExampleInput"></textarea>
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="footer">
+    <view class="save-btn-wrapper">
+      <button class="save-btn" loading="{{loading}}" bindtap="handleSave">保存</button>
+    </view>
+  </view>
+</view>

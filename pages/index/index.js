@@ -44,7 +44,7 @@ Page({
 
   // 新增闪卡
   addCard() {
-    wx.showToast({ title: '功能开发中', icon: 'none' });
+    wx.navigateTo({ url: '/pages/add-card/add-card' });
   },
 
   // 批量新增
