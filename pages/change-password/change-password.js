@@ -10,10 +10,6 @@ Page({
     loading: false
   },
 
-  // 返回上一页
-  goBack: function() {
-    wx.navigateBack();
-  },
 
   // 当前密码输入
   onCurrentPasswordInput: function(e) {

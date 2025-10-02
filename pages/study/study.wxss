@@ -101,6 +101,9 @@
 .action-area {
   padding: 40rpx;
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .check-in-btn {

@@ -1,0 +1,107 @@
+/* pages/my/my.wxss */
+.page {
+  min-height: 100vh;
+  background: #F8F8F8; /* fill_4GY2FT */
+  padding-bottom: 0; /* 使用原生 tabBar，无需预留 */
+  box-sizing: border-box;
+}
+
+
+
+/* 个人信息卡对应 Figma 高度约 90 */
+.profile-card {
+  margin-top: 20rpx;
+  background: #FFFFFF; /* fill_IWT2M5 */
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  position: relative; /* 便于右侧箭头绝对定位 */
+}
+
+.avatar {
+  width: 80rpx;   /* 40px */
+  height: 80rpx;  /* 40px */
+  background: #F9F9F9; /* fill_HMGHAL */
+  border-radius: 8rpx;
+  margin-right: 24rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 36rpx; /* 18px, style_0MT8XW */
+  color: #333333;   /* fill_Y6N719 */
+  line-height: 1.4;
+}
+
+.meta {
+  margin-top: 8rpx;
+  font-size: 24rpx; /* 12px, style_QXICGV */
+  color: #888888;   /* fill_A4JHIW */
+  line-height: 1.4;
+}
+
+/* 右侧箭头（跳转基本信息） */
+.profile-arrow {
+  width: 20rpx;   /* 10px */
+  height: 20rpx;  /* 10px */
+  border-right: 2rpx solid #CCCCCC;
+  border-bottom: 2rpx solid #CCCCCC;
+  transform: translateY(-50%) rotate(-45deg);
+  position: absolute;
+  right: 24rpx;
+  top: 50%;
+}
+
+/* 列表块（学习情况/修改密码） */
+.list-block {
+  margin-top: 20rpx;
+  background: #FFFFFF;
+  padding: 0 24rpx;
+}
+
+.list-item {
+  height: 156rpx; /* 78px → 156rpx */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 32rpx; /* 16px, style_BW5K4Y */
+  color: #333333;
+}
+
+.arrow {
+  width: 20rpx;  /* 10px */
+  height: 20rpx; /* 10px */
+  border-right: 2rpx solid #CCCCCC;
+  border-bottom: 2rpx solid #CCCCCC;
+  transform: rotate(-45deg);
+}
+
+.divider {
+  height: 2rpx; /* 1px → 2rpx */
+  background: #F0F2F5; /* stroke_HHO65R */
+}
+
+/* 退出登录 */
+.logout-block {
+  margin-top: 20rpx;
+  background: #FFFFFF;
+  height: 110rpx; /* 55px → 110rpx */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-text {
+  font-size: 32rpx; /* 16px, style_OGVTFV */
+  color: #F56C6C;   /* fill_JS58HK */
+}
+

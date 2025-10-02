@@ -1,46 +1,38 @@
-/**app.wxss**/
-.container {
-  height: 100%;
+/** app.wxss (global styles) **/
+/* 现有内容保留在下方注释线之上，以下为新增全局工具类 */
+/* ========== Global Button Utilities ========== */
+/* 父容器居中：请优先让外层容器使用该类，实现规范的 flex 居中 */
+.btn-center {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+}
+
+/* 固定宽度按钮基类：若需不同宽度，可复制此类改名为 btn-fixed-XXX 并调整宽度 */
+.btn-fixed-690 {
+  width: 690rpx !important;
+  flex: 0 0 690rpx;
   box-sizing: border-box;
 }
 
-/* 底部导航栏文字大小调整 */
-.wx-tabbar-item {
-  font-size: 32rpx !important;
+/* 若未来统一固定宽度按钮尺寸，可改为通用类（示例，默认 690rpx）
+.btn-fixed {
+  width: 690rpx !important;
+  flex: 0 0 690rpx;
+  box-sizing: border-box;
+}
+*/
+
+/* 建议：按钮本体内部内容居中 */
+.btn-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.wx-tabbar-label {
-  font-size: 32rpx !important;
-  font-weight: 500 !important;
-}
-
-/* 针对iOS设备的额外优化 */
-.wx-tabbar-item .wx-tabbar-label {
-  font-size: 32rpx !important;
-  line-height: 1.2 !important;
-}
-
-/* 底部导航栏位置调整 - 确保贴合屏幕底部 */
-.wx-tabbar {
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  margin-bottom: 0 !important;
-  padding-bottom: env(safe-area-inset-bottom) !important;
-}
-
-/* 兼容不同设备的底部安全区域 */
-.wx-tabbar-border {
-  display: none !important;
-}
-
-/* 确保内容区域不被底部导航栏遮挡 */
-page {
-  padding-bottom: env(safe-area-inset-bottom) !important;
-}
+/* 说明：
+1) 使用规范：
+  - 外层容器加 .btn-center，按钮本体可加 .btn-flex 居中文本/图标
+  - 需要固定按钮宽度时，加 .btn-fixed-690（或你自定义的固定宽度类）
+2) 不直接全局覆盖 button 的宽度，避免破坏“应为通栏”的按钮（如登录、提交等 100% 宽按钮）
+*/

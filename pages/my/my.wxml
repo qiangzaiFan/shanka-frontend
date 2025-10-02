@@ -1,0 +1,35 @@
+<!-- pages/my/my.wxml -->
+<view class="page">
+
+  <!-- 个人信息卡 -->
+  <view class="profile-card">
+    <view class="avatar">
+      <!-- 可替换为真实头像图片 -->
+      <!-- <image class="avatar-img" src="/images/avatar-default.png" mode="aspectFill" /> -->
+    </view>
+    <view class="profile-texts">
+      <text class="name">小明爸爸</text>
+      <text class="meta">编号: 10086 | 有效期至: 2026-08-07</text>
+    </view>
+    <view class="profile-arrow" bindtap="goProfile"></view>
+  </view>
+
+  <!-- 功能列表块 -->
+  <view class="list-block">
+    <view class="list-item" bindtap="goStudy">
+      <text class="label">学习情况</text>
+      <view class="arrow"></view>
+    </view>
+    <view class="divider"></view>
+    <view class="list-item" bindtap="goChangePassword">
+      <text class="label">修改密码</text>
+      <view class="arrow"></view>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-block" bindtap="logout">
+    <text class="logout-text">退出登录</text>
+  </view>
+
+</view>

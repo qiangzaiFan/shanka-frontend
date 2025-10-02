@@ -24,6 +24,9 @@
 
 .register-btn-wrapper {
   margin-bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .register-btn {

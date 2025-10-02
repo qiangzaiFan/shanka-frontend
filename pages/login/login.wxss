@@ -61,6 +61,9 @@
 .login-btn-wrapper {
   margin-top: 90rpx; /* 45px */
   margin-bottom: 18rpx; /* 9px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-btn {

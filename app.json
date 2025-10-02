@@ -8,6 +8,7 @@
     "pages/study/study",
     "pages/profile/profile",
     "pages/change-password/change-password",
+    "pages/my/my",
     "pages/logs/logs"
   ],
   "window":{
@@ -31,7 +32,7 @@
         "text": "学习卡"
       },
       {
-        "pagePath": "pages/profile/profile",
+        "pagePath": "pages/my/my",
         "text": "我的"
       }
     ]
