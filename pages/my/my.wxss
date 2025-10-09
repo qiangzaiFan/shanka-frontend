@@ -1,17 +1,15 @@
 /* pages/my/my.wxss */
 .page {
   min-height: 100vh;
-  background: #F8F8F8; /* fill_4GY2FT */
+  background: #f8f8f8; /* fill_4GY2FT */
   padding-bottom: 0; /* 使用原生 tabBar，无需预留 */
   box-sizing: border-box;
 }
 
-
-
 /* 个人信息卡对应 Figma 高度约 90 */
 .profile-card {
   margin-top: 20rpx;
-  background: #FFFFFF; /* fill_IWT2M5 */
+  background: #ffffff; /* fill_IWT2M5 */
   display: flex;
   align-items: center;
   padding: 20rpx 24rpx;
@@ -19,13 +17,18 @@
 }
 
 .avatar {
-  width: 80rpx;   /* 40px */
-  height: 80rpx;  /* 40px */
-  background: #F9F9F9; /* fill_HMGHAL */
-  border-radius: 8rpx;
+  width: 80rpx; /* 40px */
+  height: 80rpx; /* 40px */
+  background: #f9f9f9; /* fill_HMGHAL */
+  border-radius: 50%;
   margin-right: 24rpx;
   position: relative;
   overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
 }
 
 .profile-texts {
@@ -35,23 +38,24 @@
 
 .name {
   font-size: 36rpx; /* 18px, style_0MT8XW */
-  color: #333333;   /* fill_Y6N719 */
+  color: #333333; /* fill_Y6N719 */
   line-height: 1.4;
+  font-weight: 600;
 }
 
 .meta {
   margin-top: 8rpx;
   font-size: 24rpx; /* 12px, style_QXICGV */
-  color: #888888;   /* fill_A4JHIW */
+  color: #888888; /* fill_A4JHIW */
   line-height: 1.4;
 }
 
 /* 右侧箭头（跳转基本信息） */
 .profile-arrow {
-  width: 20rpx;   /* 10px */
-  height: 20rpx;  /* 10px */
-  border-right: 2rpx solid #CCCCCC;
-  border-bottom: 2rpx solid #CCCCCC;
+  width: 20rpx; /* 10px */
+  height: 20rpx; /* 10px */
+  border-right: 2rpx solid #cccccc;
+  border-bottom: 2rpx solid #cccccc;
   transform: translateY(-50%) rotate(-45deg);
   position: absolute;
   right: 24rpx;
@@ -61,12 +65,12 @@
 /* 列表块（学习情况/修改密码） */
 .list-block {
   margin-top: 20rpx;
-  background: #FFFFFF;
+  background: #ffffff;
   padding: 0 24rpx;
 }
 
 .list-item {
-  height: 156rpx; /* 78px → 156rpx */
+  height: 110rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,22 +82,22 @@
 }
 
 .arrow {
-  width: 20rpx;  /* 10px */
+  width: 20rpx; /* 10px */
   height: 20rpx; /* 10px */
-  border-right: 2rpx solid #CCCCCC;
-  border-bottom: 2rpx solid #CCCCCC;
+  border-right: 2rpx solid #cccccc;
+  border-bottom: 2rpx solid #cccccc;
   transform: rotate(-45deg);
 }
 
 .divider {
   height: 2rpx; /* 1px → 2rpx */
-  background: #F0F2F5; /* stroke_HHO65R */
+  background: #f0f2f5; /* stroke_HHO65R */
 }
 
 /* 退出登录 */
 .logout-block {
   margin-top: 20rpx;
-  background: #FFFFFF;
+  background: #ffffff;
   height: 110rpx; /* 55px → 110rpx */
   display: flex;
   align-items: center;
@@ -102,6 +106,5 @@
 
 .logout-text {
   font-size: 32rpx; /* 16px, style_OGVTFV */
-  color: #F56C6C;   /* fill_JS58HK */
+  color: #f56c6c; /* fill_JS58HK */
 }
-

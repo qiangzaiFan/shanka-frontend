@@ -11,7 +11,7 @@
 /* 固定宽度按钮基类：若需不同宽度，可复制此类改名为 btn-fixed-XXX 并调整宽度 */
 .btn-fixed-690 {
   width: 690rpx !important;
-  flex: 0 0 690rpx;
+  /* flex: 0 0 690rpx; */
   box-sizing: border-box;
 }
 

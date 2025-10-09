@@ -1,80 +1,83 @@
 <!-- pages/profile/profile.wxml -->
-<view class="page">
-  <!-- 家长信息 -->
-  <view class="section">
-    <text class="section-title">家长信息</text>
-
-    <!-- 头像 -->
-    <view class="cell avatar-cell">
-      <text class="label">头像</text>
-      <view class="avatar-circle"></view>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 昵称 -->
-    <view class="cell">
-      <text class="label">昵称</text>
-      <text class="value">{{parentName}}</text>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 手机号 -->
-    <view class="cell">
-      <text class="label">手机号</text>
-      <text class="value">{{parentPhone}}</text>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 注册时间 -->
-    <view class="cell">
-      <text class="label">注册时间</text>
-      <text class="value">{{registerDate}}</text>
-    </view>
-  </view>
-
-  <!-- 孩子信息 -->
-  <view class="section">
-    <text class="section-title">孩子信息</text>
-
-    <!-- 孩子头像 -->
-    <view class="cell avatar-cell">
-      <text class="label">孩子头像</text>
-      <view class="avatar-circle"></view>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 孩子昵称 -->
-    <view class="cell">
-      <text class="label">孩子昵称</text>
-      <text class="value">{{childName}}</text>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 出生日期 -->
-    <view class="cell">
-      <text class="label">出生日期</text>
-      <text class="value">{{birthDate}}</text>
-      <view class="chevron"></view>
-    </view>
-    <view class="divider"></view>
-
-    <!-- 性别 -->
-    <view class="cell gender-cell">
-      <text class="label">性别</text>
-      <view class="seg">
-        <view class="seg-item {{gender==='male' ? 'active' : ''}}" data-value="male" bindtap="setGender">男</view>
-        <view class="seg-item {{gender==='female' ? 'active' : ''}}" data-value="female" bindtap="setGender">女</view>
+<form bindsubmit="saveProfile">
+  <view class="page">
+    <!-- 家长信息 -->
+    <view class="section-title">家长信息</view>
+    <view class="card">
+      <view class="cell" bind:tap="changeAvatar" data-type="parent">
+        <text class="label">头像</text>
+        <view class="value-container">
+          <image class="avatar" src="{{parentAvatar}}" mode="aspectFill" />
+          <view class="chevron"></view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="cell">
+        <text class="label">昵称</text>
+        <view class="value-container">
+          <input name="parentName" class="input" value="{{parentName}}" placeholder="请输入昵称" placeholder-class="input-placeholder" />
+          <view class="chevron"></view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="cell">
+        <text class="label">手机号</text>
+        <view class="value-container">
+          <text class="value-text">{{parentPhone}}</text>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="cell">
+        <text class="label">注册时间</text>
+        <view class="value-container">
+          <text class="value-text">{{registerDate}}</text>
+        </view>
       </view>
     </view>
-  </view>
 
-  <!-- 保存区域 -->
-  <view class="save-area">
-    <button class="save-btn" bindtap="saveProfile">保存修改</button>
+    <!-- 孩子信息 -->
+    <view class="section-title">孩子信息</view>
+    <view class="card">
+      <view class="cell" bind:tap="changeAvatar" data-type="child">
+        <text class="label">孩子头像</text>
+        <view class="value-container">
+          <image class="avatar" src="{{childAvatar}}" mode="aspectFill" />
+          <view class="chevron"></view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <view class="cell">
+        <text class="label">孩子昵称</text>
+        <view class="value-container">
+          <input name="childName" class="input" value="{{childName}}" placeholder="请输入孩子昵称" placeholder-class="input-placeholder" />
+          <view class="chevron"></view>
+        </view>
+      </view>
+      <view class="divider"></view>
+      <picker mode="date" value="{{birthDate}}" bindchange="bindDateChange">
+        <view class="cell">
+          <text class="label">出生日期</text>
+          <view class="value-container">
+            <text class="value-text">{{birthDate}}</text>
+            <view class="chevron"></view>
+          </view>
+        </view>
+      </picker>
+      <view class="divider"></view>
+      <view class="cell">
+        <text class="label">性别</text>
+        <view class="value-container">
+          <view class="gender-selector">
+            <view class="gender-option {{gender === 'male' ? 'active' : ''}}" data-value="male" bind:tap="setGender">男</view>
+            <view class="gender-option {{gender === 'female' ? 'active' : ''}}" data-value="female" bind:tap="setGender">女</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 保存区域 -->
+    <view class="save-area">
+      <button class="save-btn" form-type="submit">保存修改</button>
+    </view>
   </view>
-</view>
+</form>

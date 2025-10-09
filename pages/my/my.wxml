@@ -2,16 +2,16 @@
 <view class="page">
 
   <!-- 个人信息卡 -->
-  <view class="profile-card">
+  <view class="profile-card" bindtap="goProfile">
     <view class="avatar">
       <!-- 可替换为真实头像图片 -->
-      <!-- <image class="avatar-img" src="/images/avatar-default.png" mode="aspectFill" /> -->
+      <image class="avatar-img" src="/images/logo.svg" mode="aspectFill" />
     </view>
     <view class="profile-texts">
-      <text class="name">小明爸爸</text>
-      <text class="meta">编号: 10086 | 有效期至: 2026-08-07</text>
+      <text class="name">{{name}}</text>
+      <text class="meta">{{idText}}</text>
     </view>
-    <view class="profile-arrow" bindtap="goProfile"></view>
+    <view class="profile-arrow"></view>
   </view>
 
   <!-- 功能列表块 -->
